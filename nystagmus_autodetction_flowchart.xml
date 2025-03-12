@@ -1,0 +1,243 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" version="24.9.1">
+  <diagram id="flowchart-1" name="眼震自动检测流程图">
+    <mxGraphModel dx="1674" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" value="开始" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e6ff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="40" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="load-data" value="加载plist数据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="150" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="preprocess" value="信号预处理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="260" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="inflection" value="拐点检测" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffdbf0;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="370" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="slope-calc" value="计算拐点间斜率" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="480" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pattern-identify" value="眼震模式识别" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5e6;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="590" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="collect-patterns" value="收集潜在眼震模式" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="700" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="check-inflection" value="拐点组合符合条件?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e6f2ff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="810" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="calc-ratio" value="计算斜率比率" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="700" y="810" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="check-time-ratio" value="时间和比率符合范围?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e6f2ff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="700" y="930" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="add-to-pattern" value="添加到潜在模式" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="700" y="1050" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="calc-cv" value="计算变异系数(CV)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="1050" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="filter-outliers" value="过滤异常值" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="1160" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="determine-spv" value="确定SPV和方向" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="1270" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="输出分析结果" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e6ff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="1380" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="preprocess-group" value="预处理步骤" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="190" width="330" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="highpass" value="高通滤波(去基线漂移)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="preprocess-group" vertex="1">
+          <mxGeometry x="60" y="50" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lowpass" value="低通滤波(去高频噪声)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="preprocess-group" vertex="1">
+          <mxGeometry x="60" y="100" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="resample" value="信号重采样(增加采样点)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="preprocess-group" vertex="1">
+          <mxGeometry x="60" y="150" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="inflection-params" value="拐点检测参数" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="420" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="prominence" value="prominence=0.1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffdbf0;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="inflection-params" vertex="1">
+          <mxGeometry x="60" y="50" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="distance" value="distance=150" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffdbf0;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="inflection-params" vertex="1">
+          <mxGeometry x="60" y="105" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="pattern-params" value="眼震模式参数" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="610" width="330" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="time-param" value="时间: 0.3-0.8秒" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fcefca;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="pattern-params" vertex="1">
+          <mxGeometry x="60" y="45" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ratio-param" value="斜率比: 1.4-8.0" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fcefca;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="pattern-params" vertex="1">
+          <mxGeometry x="60" y="100" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="cv-calculation" value="变异系数(CV)计算" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
+          <mxGeometry x="700" y="1150" width="350" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="median" value="中位数(慢相斜率)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="cv-calculation" vertex="1">
+          <mxGeometry x="55" y="40" width="240" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="mad" value="MAD标准化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="cv-calculation" vertex="1">
+          <mxGeometry x="55" y="95" width="240" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="cv-formula" value="CV = (MAD/|中位数|)×100" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="cv-calculation" vertex="1">
+          <mxGeometry x="55" y="150" width="240" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-1" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="start" target="load-data" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="120" as="sourcePoint" />
+            <mxPoint x="540" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-2" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="load-data" target="preprocess" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="230" as="sourcePoint" />
+            <mxPoint x="540" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="preprocess" target="inflection" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="340" as="sourcePoint" />
+            <mxPoint x="540" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-4" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="inflection" target="slope-calc" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="450" as="sourcePoint" />
+            <mxPoint x="540" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-5" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="slope-calc" target="pattern-identify" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="560" as="sourcePoint" />
+            <mxPoint x="540" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-6" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="pattern-identify" target="collect-patterns" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="670" as="sourcePoint" />
+            <mxPoint x="540" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-7" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="collect-patterns" target="check-inflection" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="780" as="sourcePoint" />
+            <mxPoint x="540" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-8" value="是" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="check-inflection" target="calc-ratio" edge="1">
+          <mxGeometry x="-0.2" y="15" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="850" as="sourcePoint" />
+            <mxPoint x="690" y="850" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-9" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="calc-ratio" target="check-time-ratio" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="790" y="900" as="sourcePoint" />
+            <mxPoint x="790" y="930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-10" value="是" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="check-time-ratio" target="add-to-pattern" edge="1">
+          <mxGeometry x="0.25" y="20" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="790" y="1020" as="sourcePoint" />
+            <mxPoint x="790" y="1050" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-11" value="继续下一个拐点组合" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="check-inflection" target="calc-cv" edge="1">
+          <mxGeometry x="-0.2308" y="-15" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="900" as="sourcePoint" />
+            <mxPoint x="350" y="1050" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="540" y="925" />
+              <mxPoint x="350" y="925" />
+              <mxPoint x="350" y="1085" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-12" value="否" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="check-time-ratio" target="calc-cv" edge="1">
+          <mxGeometry x="-0.2" y="-15" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="970" as="sourcePoint" />
+            <mxPoint x="650" y="1085" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="650" y="970" />
+              <mxPoint x="650" y="1085" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-13" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="add-to-pattern" target="calc-cv" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="1085" as="sourcePoint" />
+            <mxPoint x="630" y="1085" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-14" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="calc-cv" target="filter-outliers" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="1130" as="sourcePoint" />
+            <mxPoint x="540" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-15" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="filter-outliers" target="determine-spv" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="1240" as="sourcePoint" />
+            <mxPoint x="540" y="1270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-16" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="determine-spv" target="end" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="1350" as="sourcePoint" />
+            <mxPoint x="540" y="1380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-sub-1" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=5 3;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="preprocess-group" target="preprocess" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="295" as="sourcePoint" />
+            <mxPoint x="450" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-sub-2" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=5 3;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="inflection-params" target="inflection" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="505" as="sourcePoint" />
+            <mxPoint x="450" y="405" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="425" y="505" />
+              <mxPoint x="425" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-sub-3" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=5 3;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="pattern-params" target="pattern-identify" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="690" as="sourcePoint" />
+            <mxPoint x="450" y="625" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="425" y="690" />
+              <mxPoint x="425" y="625" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-sub-4" value="" style="endArrow=classic;html=1;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=5 3;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="cv-calculation" target="calc-cv" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="1270" as="sourcePoint" />
+            <mxPoint x="630" y="1120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="670" y="1270" />
+              <mxPoint x="670" y="1140" />
+              <mxPoint x="630" y="1140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
