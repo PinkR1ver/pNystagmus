@@ -16,7 +16,7 @@ st.title("眼震分析器")
 st.sidebar.header("参数设置")
 
 # 数据加载设置
-data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'phone')
 example_folders = [f for f in os.listdir(data_path) if os.path.isdir(os.path.join(data_path, f))]
 
 if not example_folders:

@@ -43,7 +43,7 @@
         <mxCell id="more-points" value="还有更多拐点组合?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
           <mxGeometry x="450" y="1040" width="180" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="calc-cv" value="计算变异系数(CV)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+        <mxCell id="calc-cv" value="计算健壮变异系数(CV)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
           <mxGeometry x="450" y="1160" width="180" height="70" as="geometry" />
         </mxCell>
         <mxCell id="filter-outliers" value="过滤异常值" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
@@ -87,16 +87,16 @@
         <mxCell id="ratio-param" value="斜率比: 1.4-8.0" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fcefca;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="pattern-params" vertex="1">
           <mxGeometry x="60" y="100" width="210" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="cv-calculation" value="变异系数(CV)计算" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
+        <mxCell id="cv-calculation" value="基于中位数的健壮变异系数(CV)计算" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
           <mxGeometry x="700" y="1260" width="350" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="median" value="中位数(慢相斜率)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="cv-calculation" vertex="1">
+        <mxCell id="median" value="计算慢相斜率中位数" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="cv-calculation" vertex="1">
           <mxGeometry x="55" y="40" width="240" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="mad" value="MAD标准化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="cv-calculation" vertex="1">
+        <mxCell id="mad" value="计算MAD并标准化(×1.4826)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="cv-calculation" vertex="1">
           <mxGeometry x="55" y="95" width="240" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="cv-formula" value="CV = (MAD/|中位数|)×100" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="cv-calculation" vertex="1">
+        <mxCell id="cv-formula" value="健壮CV = (标准化MAD/|中位数|)×100" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e8f4f9;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="cv-calculation" vertex="1">
           <mxGeometry x="55" y="150" width="240" height="45" as="geometry" />
         </mxCell>
         <mxCell id="conn-1" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="start" target="load-data" edge="1">
