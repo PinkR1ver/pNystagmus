@@ -1,0 +1,144 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.1">
+  <diagram id="flowchart-1" name="信号预处理架构图">
+    <mxGraphModel dx="1674" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" value="开始" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e6ff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="40" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="load-data" value="加载前庭数据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="150" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="anomaly-detection" value="异常值检测与修正" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5e6;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="260" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="highpass-filter" value="高通滤波" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="370" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="lowpass-filter" value="低通滤波" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="480" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="resample" value="信号重采样" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5e6;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="590" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="预处理完成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0e6ff;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="450" y="700" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="highpass-params" value="高通滤波参数" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="320" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="cutoff-hp" value="截止频率=0.1Hz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="highpass-params" vertex="1">
+          <mxGeometry x="60" y="50" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="order-hp" value="滤波器阶数=5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="highpass-params" vertex="1">
+          <mxGeometry x="60" y="105" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="lowpass-params" value="低通滤波参数" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="500" width="330" height="170" as="geometry">
+            <mxRectangle x="70" y="610" width="160" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cutoff-lp" value="截止频率=6.0Hz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="lowpass-params" vertex="1">
+          <mxGeometry x="60" y="50" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="order-lp" value="滤波器阶数=5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="lowpass-params" vertex="1">
+          <mxGeometry x="60" y="105" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="anomaly-params" value="异常值处理参数" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
+          <mxGeometry x="680" y="240" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="mad-method" value="基于中位数绝对偏差(MAD)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5e6;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="anomaly-params" vertex="1">
+          <mxGeometry x="60" y="50" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="resample-params" value="重采样参数" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
+          <mxGeometry x="680" y="570" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="interpolate-ratio" value="插值比例=10" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff5e6;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="resample-params" vertex="1">
+          <mxGeometry x="60" y="50" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="processing-details" value="信号处理技术细节" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=5 3;fillColor=#f7f7f7;strokeColor=#999999;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=20;fontStyle=1;verticalAlign=top;container=1;" parent="1" vertex="1">
+          <mxGeometry x="680" y="380" width="330" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="filter-type" value="巴特沃兹(Butterworth)滤波器" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="processing-details" vertex="1">
+          <mxGeometry x="60" y="50" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="phase-correction" value="零相位滤波(filtfilt)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6ffed;strokeColor=#333333;fontFamily=Microsoft YaHei, SimHei, sans-serif;fontSize=16;" parent="processing-details" vertex="1">
+          <mxGeometry x="60" y="105" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="conn-1" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="start" target="load-data" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="120" as="sourcePoint" />
+            <mxPoint x="540" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-2" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="load-data" target="anomaly-detection" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="230" as="sourcePoint" />
+            <mxPoint x="540" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="anomaly-detection" target="highpass-filter" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="340" as="sourcePoint" />
+            <mxPoint x="540" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-4" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="highpass-filter" target="lowpass-filter" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="450" as="sourcePoint" />
+            <mxPoint x="540" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-5" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="lowpass-filter" target="resample" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="560" as="sourcePoint" />
+            <mxPoint x="540" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-6" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=2.5;" parent="1" source="resample" target="end" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="670" as="sourcePoint" />
+            <mxPoint x="540" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-highpass" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=5 3;strokeColor=#333333;strokeWidth=2;" parent="1" source="highpass-params" target="highpass-filter" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="405" as="sourcePoint" />
+            <mxPoint x="450" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-lowpass" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=5 3;strokeColor=#333333;strokeWidth=2;" parent="1" source="lowpass-params" target="lowpass-filter" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="515" as="sourcePoint" />
+            <mxPoint x="450" y="515" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-anomaly" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=5 3;strokeColor=#333333;strokeWidth=2;" parent="1" source="anomaly-params" target="anomaly-detection" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="295" as="sourcePoint" />
+            <mxPoint x="630" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-resample" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=5 3;strokeColor=#333333;strokeWidth=2;" parent="1" source="resample-params" target="resample" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="625" as="sourcePoint" />
+            <mxPoint x="630" y="625" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-process" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;dashed=1;dashPattern=5 3;strokeColor=#333333;strokeWidth=2;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="processing-details" target="highpass-filter" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="475" as="sourcePoint" />
+            <mxPoint x="631" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-process-2" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=5 3;strokeColor=#333333;strokeWidth=2;" parent="1" source="processing-details" target="lowpass-filter" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="475" as="sourcePoint" />
+            <mxPoint x="630" y="475" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

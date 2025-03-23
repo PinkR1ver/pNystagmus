@@ -68,8 +68,9 @@ def batch_analyze_nystagmus():
             # 如果找不到文件，记录为NaN并继续
             if file_path is None:
                 print(f"  - {direction_labels[direction]}: 未找到数据文件")
-                patient_result[f"{direction_labels[direction]}_方向"] = "N/A"
-                patient_result[f"{direction_labels[direction]}_SPV"] = np.nan
+                patient_result[f"phone_{direction_labels[direction]}_方向"] = "N/A"
+                patient_result[f"phone_{direction_labels[direction]}_SPV"] = np.nan
+                patient_result[f"goggle_{direction_labels[direction]}_SPV"] = np.nan
                 continue
             
             try:
@@ -90,18 +91,21 @@ def batch_analyze_nystagmus():
                 
                 # 记录结果
                 if patterns:
-                    patient_result[f"{direction_labels[direction]}_方向"] = nystagmus_direction
-                    patient_result[f"{direction_labels[direction]}_SPV"] = round(spv, 2)
+                    patient_result[f"phone_{direction_labels[direction]}_方向"] = nystagmus_direction
+                    patient_result[f"phone_{direction_labels[direction]}_SPV"] = round(spv, 2)
+                    patient_result[f"goggle_{direction_labels[direction]}_SPV"] = np.nan
                     print(f"  - {direction_labels[direction]}: 方向={nystagmus_direction}, SPV={spv:.2f}°/s, CV={cv:.2f}%")
                 else:
-                    patient_result[f"{direction_labels[direction]}_方向"] = "未检测到"
-                    patient_result[f"{direction_labels[direction]}_SPV"] = np.nan
+                    patient_result[f"phone_{direction_labels[direction]}_方向"] = "未检测到"
+                    patient_result[f"phone_{direction_labels[direction]}_SPV"] = np.nan
+                    patient_result[f"goggle_{direction_labels[direction]}_SPV"] = np.nan
                     print(f"  - {direction_labels[direction]}: 未检测到有效眼震")
             
             except Exception as e:
                 print(f"  - {direction_labels[direction]}: 分析错误: {str(e)}")
-                patient_result[f"{direction_labels[direction]}_方向"] = "错误"
-                patient_result[f"{direction_labels[direction]}_SPV"] = np.nan
+                patient_result[f"phone_{direction_labels[direction]}_方向"] = "错误"
+                patient_result[f"phone_{direction_labels[direction]}_SPV"] = np.nan
+                patient_result[f"goggle_{direction_labels[direction]}_SPV"] = np.nan
         
         # 添加到结果列表
         results.append(patient_result)
