@@ -119,42 +119,53 @@ def moving_average_filter(data, window_size):
 
     return filtered_data[:len(data)]
 
-def signal_preprocess(plist_path, highpass_parameter={'cutoff': 0.1, 'fs': 60, 'order': 5}, 
+def signal_preprocess(timestamps, eye_angles, 
+                     highpass_parameter={'cutoff': 0.1, 'fs': 60, 'order': 5}, 
                      lowpass_parameter={'cutoff': 6, 'fs': 60, 'order': 5}, 
                      window_size=25, interpolate_ratio=10, skip_moving_average=False):
     """
-    信号预处理完整流程
+    对信号进行预处理，包括高通滤波、低通滤波、(可选)移动平均平滑和插值。
+
+    参数:
+    timestamps (np.array): 时间戳数组。
+    eye_angles (np.array): 眼动角度数组。
+    highpass_parameter (dict): 高通滤波器参数。
+    lowpass_parameter (dict): 低通滤波器参数。
+    window_size (int): 移动平均滤波器窗口大小。如果为0或None，则跳过移动平均。
+    interpolate_ratio (int): 插值比例。
+    skip_moving_average (bool): 如果为True，则强制跳过移动平均滤波，即使window_size > 0。
     
-    Args:
-        plist_path: plist文件路径
-        highpass_parameter: 高通滤波器参数
-        lowpass_parameter: 低通滤波器参数
-        window_size: 移动平均窗口大小
-        interpolate_ratio: 插值比例
-        skip_moving_average: 是否跳过移动平均平滑
-        
-    Returns:
-        signal_data_filtered: 处理后的信号
-        time: 对应的时间序列
+    返回:
+    tuple: 包含处理后的信号和对应的时间数组。
     """
-    freq = highpass_parameter['fs']
-    timestamps, eye_angles = plists_to_data(plist_path)
+    original_time = timestamps
+    original_signal = eye_angles
     
-    # 应用高通滤波
-    signal_filtered = butter_highpass_filter(eye_angles, **highpass_parameter)
+    # 确保timestamps和eye_angles长度一致
+    min_len = min(len(original_time), len(original_signal))
+    original_time = original_time[:min_len]
+    original_signal = original_signal[:min_len]
+
+    # 检查数据是否为空
+    if len(original_signal) == 0 or len(original_time) == 0:
+        # 返回空数组或根据需要处理错误
+        return np.array([]), np.array([])
+
+    # 1. 高通滤波
+    signal_filtered = butter_highpass_filter(original_signal, **highpass_parameter)
     
-    # 应用低通滤波
+    # 2. 低通滤波
     signal_filtered = butter_lowpass_filter(signal_filtered, **lowpass_parameter)
     
-    # 重采样（增加采样点）
-    signal_filtered = signal.resample(signal_filtered, int(len(eye_angles) * interpolate_ratio))
+    # 3. 重采样（增加采样点）
+    signal_filtered = signal.resample(signal_filtered, int(len(original_signal) * interpolate_ratio))
     
-    # 移动平均平滑 (只有当skip_moving_average为False时才执行)
+    # 4. 移动平均平滑 (只有当skip_moving_average为False时才执行)
     if not skip_moving_average and window_size > 0:
         signal_filtered = moving_average_filter(signal_filtered, window_size)
     
-    # 生成新的时间序列
-    time = np.linspace(timestamps[0], timestamps[-1], len(signal_filtered))
+    # 5. 生成新的时间序列
+    time = np.linspace(original_time[0], original_time[-1], len(signal_filtered))
     
     return signal_filtered, time
 
